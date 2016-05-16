@@ -1,0 +1,32 @@
+<html ng-app="framework">
+<head>
+	<!-- include all javascript here -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-resource.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://localhost:8000/js/client-controllers.js"></script>
+	<script type="text/javascript" src="http://localhost:8000/js/oop.js"></script>
+	<!-- include all stylesheets here -->
+	<link type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"></link>
+</head>
+<body>
+	<div class="container" ng-controller="mainController">
+		<input type="button" ng-click="changeEmail()"></input>
+		<ul class="nav nav-pills col-sm-offset-2">
+			<li class="active"><a data-toggle="pill" href="#login">Login</a></li>
+			<li><a data-toggle="pill" href="#register" ng-click="loadRegistrationForm()">Register</a></li>
+		</ul>
+		<div class="tab-content">
+			<div id="login" class="tab-pane fade in active" load-login-form ng-model="loginData">
+				<!-- load login form directive here -->
+			</div>
+			{{loginData}}
+			<div id="register" class="tab-pane">
+				<!-- load Registration form directive here -->
+			</div>
+		</div>
+	</div>
+</body>
+</html>
